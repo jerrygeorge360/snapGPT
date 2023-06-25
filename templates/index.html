@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href=../static/css/icon.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <object data="../static/icons/expand-7217823.svg" width="30" height="30"> </object>
+            <p><b>CHAT</b></p> <object data="../static/icons/plus-1727487.svg" width="25" height="25"> </object>
+        </div>
+        <div class="body">
+
+            <h1>SnapGPT</h1>
+            <h3>Examples</h3>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+
+
+        </div>
+        <div class="actions">
+            <!--                gallery-->
+                <div class="box1" id="gallery-box">
+                    <label for="gallery-file">
+                        <object data="../static/icons/mountains-7353266.svg" type="" class="actioni"></object>
+                        <input type="file" name="file" id="gallery-file" >
+                    </label>
+                </div>
+<!--            end-gallery-->
+<!--            <button class="gallery" id="gallery"><object data="../static/icons/mountains-7353266.svg" type="" class="actioni"></object></button>-->
+            <hr>
+
+             <!--                camera-->
+                <div class="box1" id="box2">
+                    <label for="sub">
+                        <object data="../static/icons/camera-2766308.svg" type="" class="actioni"></object>
+                        <button type="reset" id="sub" onclick="changeLocation()"></button>
+                    </label>
+                </div>
+<!--            end-camera-->
+<!--            <button class="camera" id="camera"><object data="../static/icons/camera-2766308.svg" type="" class="actioni"></object></button>-->
+        </div>
+
+
+        <div class="input">
+            <div class="inputcon">
+                <textarea name="" id="intext" cols="30" rows="3" class="intext"></textarea>
+                <p style="text-align: center;margin-top: 10px;">SnapGPT</p>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/form.js"></script>
+</body>
+
+</html>
+
+<!--TODO:implement the pdf,share functionality-->

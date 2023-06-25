@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat App</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.1.2/dist/css/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200">
+  <div class="container mx-auto h-screen flex flex-col">
+    <div class="chat-container flex-grow bg-white rounded-lg shadow-lg">
+      <div class="chat-header bg-blue-500 text-white px-4 py-3">
+        <h1 class="text-lg font-bold">Chat App</h1>
+      </div>
+      <div class="chat-messages flex-grow p-4">
+        <div class="message">
+          <div class="message-sender">
+            <span class="sender-name font-bold">User1</span>
+            <span class="message-time text-gray-600">10:30 AM</span>
+          </div>
+          <div class="message-content">
+            <p class="text-gray-800">Hello!</p>
+          </div>
+        </div>
+        <div class="message">
+          <div class="message-sender">
+            <span class="sender-name font-bold">User2</span>
+            <span class="message-time text-gray-600">10:32 AM</span>
+          </div>
+          <div class="message-content">
+            <p class="text-gray-800">Hi there!</p>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input bg-gray-100 p-4 flex">
+        <input type="text" placeholder="Type your message..." class="flex-grow bg-white border border-gray-300 px-3 py-2 rounded-l-md focus:outline-none focus:border-blue-500">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-r-md">Send</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

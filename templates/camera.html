@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/camera.css">
+    <link rel="stylesheet" href="../static/css/loader.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <title>Camera</title>
+</head>
+<body>
+<div class="navbar">
+    <span>SnapGPT</span>
+</div>
+<div class="camCon" >
+    <img src="" id="createImage"  width="100%" height="100%" style="display: none;z-index: 5;"></img>
+    <div class="close show-nothing" id="close">
+        <object id="close-me" data="../static/icons/close-svgrepo-com.svg" width="100%" type=""></object>
+    </div>
+    <video  class="vid" id="vid"></video>
+
+       <canvas id="myCanvas" class="myCanvas " >
+
+  </canvas>
+      <div class="modal show-nothing" id="modal">
+
+    <div class="toggle-modal" id="toggle-modal">
+        <div class="drag1"></div>
+        <div class="drag2"></div>
+        <div class="drag3"></div>
+    </div>
+
+<div class="modal-inner-con">
+    <div class="icon-div">
+      <div class="copy-icon" id="copyIcon">
+                <img src="../static/icons/duplicate.png" width="100%" height="100%" alt="">
+      </div>
+          <div class="copy-icon" id="share" >
+              <img src="../static/icons/whatsapp.png" width="100%" height="100%" alt="">
+          </div>
+          <div class="copy-icon" id="pdfIcon">
+                <img src="../static/icons/text.png" width="100%" height="100%" alt="">
+          </div>
+    </div>
+
+
+        <div class="modal-inner " id="modal-inner">
+
+            <span class="message" id="message">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi commodi culpa cum cumque, dignissimos dolores dolorum in incidunt inventore iusto laborum nesciunt, nulla officia placeat quibusdam quisquam, reprehenderit velit veritatis vitae? Atque ea expedita, illo minima neque qui ullam! Aliquid aperiam ea iusto libero obcaecati odio officia, officiis voluptate.
+            </span>
+        </div>
+
+
+    </div>
+
+</div>
+</div>
+
+    <div class="footer" id="footer">
+
+        <!--                gallery-->
+<label for="gallery-file" class="gallery-label toggle-item" id="gallery-label">
+                <div class="box1 size" id="gallery-box">
+
+                        <object data="../static/icons/mountains-7353266.svg" type="" class="actioni"></object>
+                        <input type="file" class="show-nothing"  name="file" id="gallery-file" >
+
+                </div>
+     </label>
+<!--            end-gallery-->
+
+        <div class="circle toggle-item" id="circle" >
+            <label for="circle" id="labelCircle" class="labelCircle">
+
+        <div class="innerCircle" id="innerCircle">
+             <object data="../static/icons/icons8-search.svg" width="40px"></object>
+        </div>
+</label>
+    </div>
+
+        <div class="flip-camera toggle-item" id="flipCamera">
+            <object data="../static/icons/torch.png" width="100%" height="100%" type="" class="return"></object>
+        </div>
+
+
+
+<!--    </div>-->
+
+<!--<script src="../static/js/camera.js"></script>-->
+
+    </div>
+<script src="../static/js/misc.js"></script>
+<script src="../static/js/cam.js"></script>
+<script src="../static/js/form.js"></script>
+<script src="../static/js/copy.js"></script>
+<script src="../static/js/pdf.js"></script>
+<script src="../static/js/share.js"></script>
+<script src="../static/js/torch.js"></script>
+</body>
+
+</html>

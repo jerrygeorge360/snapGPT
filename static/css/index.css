@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+.container{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    background-color:#343541 ;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+    align-items: center;
+    width: 100%;
+    flex-basis: 50px;
+    background-color: #202123;
+}
+
+.body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 80%;
+    background-color:transparent;
+    padding: 16px;
+    overflow: auto;
+    text-align: center;
+    background-color:transparent;
+
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+}
+.input-con{
+    width: 100%;
+  
+}
+.intext{
+    outline: none;
+    width: 100%;
+    border: 1px green solid;
+    overflow-y: auto;
+    background-color: #40414f;
+    
+}
+object{
+    color:wheat;
+}
+.actioni{
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+.actions{
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    border-radius: 10%;
+    position: absolute;
+    width: 48px;
+    height: 100px;
+    background-color:white;
+    bottom: 50%;
+    right: 5px;
+}
+input{
+    display: none;
+}
+.box1{
+    width: 100%;
+    height: 50%;
+
+}
+label{
+    cursor:pointer;
+    width: 100%;
+    height: 100%;
+    display: block;
+
+}
+.box{
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    border-radius: 10%;
+    margin-bottom: 20px;
+}
+#sub{
+    display: none;
+}
+

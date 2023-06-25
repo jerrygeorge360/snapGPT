@@ -1,0 +1,273 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+.camCon{
+    height: 99vh;
+    width: 100%;
+    background-color: transparent;
+}
+.vid{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    object-fit: fill;
+
+}
+.myCanvas{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(200,200,0,0.2);*/
+
+
+}
+
+
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+
+}
+
+
+.innerCircle,.circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: white;
+     border: 1px solid black;
+
+
+}
+.labelCircle{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+
+
+}
+.innerCircle{
+    width: 60px;
+    height: 60px;
+    border: 2px solid black;
+    pointer-events: none;
+
+}
+
+.loader{
+    /*display: flex;*/
+    /*align-items: center;*/
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0,0,0,0.5);
+    position: static;
+    bottom: 0;
+    border-top-left-radius:20%;
+    border-top-right-radius: 20%;
+
+
+}
+
+.modal{
+    display: block;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,0.7);
+    border-top-left-radius: 20%;
+    border-top-right-radius:20% ;
+    animation: increase;
+    animation-duration: 2s;
+
+}
+.modal-inner-con{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: transparent;
+    margin-top: 40px;
+    position: relative;
+
+}
+.icon-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    width: 120px;
+    height: 30px;
+    z-index: 5;
+}
+.copy-icon{
+
+    width: 25px;
+    height: 25px;
+    z-index: 5;
+
+    ;
+
+}
+.modal-inner{
+    width: 300px;
+    height: 400px;
+    background-color: rgba(255,255,255,0.2);
+    overflow: auto;
+    padding: 10px;
+    animation: increase1;
+    animation-duration: 2s;
+
+
+}
+.modal-minify{
+    height: 10%;
+     animation: decrease;
+     animation-duration: 2s;
+}
+.modal-inner-minify{
+    height: 20px;
+    animation: decrease1;
+    animation-duration: 2s;
+}
+@keyframes decrease{
+    0%{height: 100% }
+    100%{height: 10%}
+}
+@keyframes decrease1 {
+    0%{height: 400px }
+    100%{height: 20px}
+}
+
+@keyframes increase{
+    0%{height: 10% }
+    100%{height: 100%}
+}
+@keyframes increase1 {
+    0%{height: 20px }
+    100%{height: 400px}
+}
+.toggle-modal{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 100px;
+    height: 20px;
+    cursor: grabbing;
+    z-index: 1;
+    background-color: transparent;
+
+}
+
+.drag1,.drag2,.drag3{
+    height: 4px;
+    background-color: black;
+    width: 100%;
+    border: 1px seagreen outset;
+    pointer-events: none;
+
+}
+.drag1{
+    width: 100%;
+}
+.drag2{
+    width: 50%;
+}
+.drag3{
+    width: 25%;
+}
+.message{
+     font-family: "Sofia", sans-serif;
+}
+.close{
+    width: 30px;
+    height: 30px;
+    top: 2px;
+    left: 2px;
+    position: absolute;
+    z-index: 1;
+}
+#close-me{
+    pointer-events: none;
+}
+.close{
+    cursor: pointer;
+    z-index: 3;
+}
+.show-nothing{
+    display: none;
+}
+.visibility{
+    visibility: hidden;
+}
+.size{
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+}
+.gallery-label{
+    cursor:pointer;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    display: inline-block;
+
+
+
+}
+.flip-camera{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+     border: 1px solid black;
+    cursor: pointer;
+
+}
+.return{
+    pointer-events: none;
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    background-color: rgba(0,0,0,0.5);
+    font-family: "Sofia", sans-serif;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}

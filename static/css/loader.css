@@ -1,0 +1,43 @@
+.shine{
+    width: 10%;
+}
+.shine1{
+    width: 30%;
+}
+.shine2{
+    width: 50%;
+}
+.shine3{
+    width: 70%;
+}
+.shine4{
+    width: 100%;
+}
+@keyframes myAnimation {
+    0%{background-color: #46473e}
+    25%{background-color: silver}
+    50%{background-color: #393939}
+    100%{background-color: #e5e4e2}
+
+}
+@keyframes myAnimation1 {
+    0%{background-color: #e5e4e2 }
+    50%{background-color: #46473e}
+    100%{background-color: #393939}
+}
+.loader{
+    animation: myAnimation1;
+     animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+}
+.shine,.shine1,.shine2,.shine3,.shine4{
+    margin-top: 12px;
+    height: 8px;
+    background-color: #666666;
+    animation: myAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+
