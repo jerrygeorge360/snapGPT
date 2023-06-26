@@ -1,22 +1,34 @@
 .historyCon{
+    display: none;
     background-color: rgba(0, 120, 0, 0.1);
     width: 80%;
-    height: 100vh;
+    height: 100%;
+    padding-top: 34px;
+    overflow: auto;
+    
 }
 
 .historyItem{
     width:100% ;
-    height: 12px;
+    height: 40px;
     padding: 6px;
     color: white;
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
 }
 .historySymbol{
-    display:inline-block;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     width: 20%;
 
 }
-.historytext{
-    display: inline-block;
+.historyText{
+    display: flex;
+    justify-content: center;
     width: 80%;
     color: white;
 }
