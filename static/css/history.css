@@ -1,0 +1,22 @@
+.historyCon{
+    background-color: rgba(0, 120, 0, 0.1);
+    width: 80%;
+    height: 100vh;
+}
+
+.historyItem{
+    width:100% ;
+    height: 12px;
+    padding: 6px;
+    color: white;
+}
+.historySymbol{
+    display:inline-block;
+    width: 20%;
+
+}
+.historytext{
+    display: inline-block;
+    width: 80%;
+    color: white;
+}

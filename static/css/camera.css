@@ -3,8 +3,16 @@
     box-sizing: border-box;
     margin: 0;
 }
+
+.container{
+    width: 100%;
+    height: 100vh;
+    overflow:hidden;
+    position: relative;
+    /* background-color: green; */
+}
 .camCon{
-    height: 99vh;
+    height: 100%;
     width: 100%;
     background-color: transparent;
 }
@@ -249,8 +257,8 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: white;
-     border: 1px solid black;
+    background-color: black;
+     border: 1px solid green;
     cursor: pointer;
 
 }
@@ -263,11 +271,14 @@
     align-items: center;
     width: 100%;
     height: 32px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,128,0,0.5);
     font-family: "Sofia", sans-serif;
     font-weight: bold;
     color: white;
     position: absolute;
     top: 0;
     z-index: 2;
+}
+.appName{
+    margin: 0;
 }
