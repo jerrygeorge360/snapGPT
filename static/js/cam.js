@@ -23,8 +23,20 @@ const rearCameraConstraints = {
 
 //check for camera availability.
 if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
-  startCam()
+    if(navigator.onLine){
+        startCam()
+
+    }
+    else {
+        alert("You need an internet connection")
+
+    }
+
 }
+
+
+
+
 
 
 function startCam(){
@@ -80,14 +92,18 @@ function startCam(){
                             document.getElementById("modal").classList.toggle("show-nothing")
                             document.getElementById("close").classList.toggle("show-nothing")
                            }
-                           if(myResponse==='invalid'){
-                               let myLoader1=document.querySelectorAll("#loader");
+
+                           if(myResponse==='invalid' || window.navigator.onLine===false ) {
+                                let myLoader1=document.querySelectorAll("#loader");
                                console.log("invalid")
                                  for(let i=0;i<myLoader1.length;i++){
                                 myLoader1[i].remove();
-
-
                             }
+
+
+
+
+
                                  document.getElementById("modal").classList.toggle("show-nothing")
                             document.getElementById("close").classList.toggle("show-nothing")
                                  message.innerText="Please position your camera properly and take a textual image."
@@ -142,5 +158,5 @@ document.getElementById("toggle-modal").addEventListener(
 
 
 
-
+// TODO:"stop the loader and any other functionality when there is no network."
 //TODO:"add network connection check."
