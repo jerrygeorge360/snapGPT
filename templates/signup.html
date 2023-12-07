@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style>
+        body{
+            background-color: white;
+        }
+        .container{
+
+            width: 50%;
+            margin: auto;
+            height: 500px;
+            background-color: white;
+            padding: 20px;
+        }
+        .welcome{
+            color: gray;
+            font-size: 12px;
+
+        }
+        .format{
+
+            margin-bottom: 4px;
+
+        }
+        .email{
+            width: 90%;
+            line-height: 32px;
+            margin-top: 15px;
+            border-radius: 10px;
+            border-width: 1px;
+            outline: none;
+            background-color: gainsboro;
+            border:none;
+            padding-left:10px;
+        }
+        .label{
+            margin-top: 20px;
+            display:block;
+            font-size: 12px;
+            font-weight:800 ;
+
+        }
+        .submit{
+            margin-top: 15px;
+            font-weight: bold;
+            width: 90%;
+            padding: 10px;
+            background-color: rgba(0,128,0,0.5);
+            border: 1px dotted silver;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h2 class="format">Let's sign you up</h2>
+    <span class="welcome">Sign up</span>
+
+     <label for="name" class="label">Name</label>
+    <input type="text" class="email" placeholder="username" id="name">
+
+    <label for="email" class="label">Email</label>
+    <input type="text" class="email" placeholder="Email" id="email">
+
+
+    <label for="password" class="label">Password</label>
+    <input type="password" class="email" placeholder="Password" id="password">
+
+        <label for="con_password" class="label">Confirm Password</label>
+    <input type="password" class="email" placeholder="Password" id="con_password">
+
+        <button type="submit" id="signup_submit" class="submit">Sign Up</button>
+ <br><br>
+      <a style="color:  rgba(0,128,0,0.5)" href="{{url_for('login')}}">log in</a>
+    </div>
+
+
+<script src="../static/js/signup.js"></script>
+
+
+</body>
+</html>

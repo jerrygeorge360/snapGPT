@@ -1,12 +1,12 @@
 let pdf_icon=document.getElementById("pdfIcon")
 
 pdf_icon.addEventListener("click",()=>{
-    alert("working")
     let text = document.getElementById("message").innerText
 
 
     fetch('/pdf', {
   method: 'GET',
+        headers:{'access_token':localStorage.getItem('access_token')}
 })
   .then(response => {
     if (!response.ok) {

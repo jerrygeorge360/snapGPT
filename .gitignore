@@ -265,5 +265,8 @@ ThePDF
 # Ignore all local history of files
 .history
 .ionide
-
+.pytest_cache
+tests
+venv
+.env
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,pycharm+iml,pycharm+all,pycharm,venv

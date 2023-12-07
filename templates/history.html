@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My History Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #2c3e50; /* Dark green background */
+            color: #ecf0f1; /* Light green text */
+        }
+        h1 {
+            text-align: center;
+            color: #27ae60; /* Light green title */
+        }
+        #historyList {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .historyItem {
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid #34495e; /* Darker green border */
+            border-radius: 8px;
+            background-color: #34495e; /* Dark green background for items */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .historyItem:hover {
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #2c3e50; /* Darker green modal background */
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            position: relative;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #ecf0f1; /* Light green close button color */
+        }
+        .share-btn {
+            background-color: #27ae60; /* Lighter green share button background */
+            color: #fff; /* White share button text color */
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .share-btn:hover {
+            background-color: #218c53; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="fadeIn"> {{user_email}} history</h1>
+    <ul id="historyList" class="fadeIn"></ul>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modalContent"></div>
+            <button class="share-btn" onclick="share()">Share</button>
+             <button class="share-btn" onclick="copy()">Copy</button>
+        </div>
+    </div>
+
+    <script>
+
+        let myHistory = [];
+
+        function displayHistory() {
+            var historyList = document.getElementById('historyList');
+            historyList.innerHTML = '';
+            fetch('/history_query',{method:"GET",headers:{'access_token':localStorage.getItem('access_token')}})
+            .then(response=>response.json())
+            .then(data=>{
+               let historyData= data['data'];
+               for(let i=0;i<historyData.length;i++){
+                   myHistory.push({ date: historyData[i][4], event: historyData[i][1], details: historyData[i][2] });
+                }
+                 myHistory.forEach(function(item, index) {
+                var listItem = document.createElement('li');
+                listItem.className = 'historyItem';
+                listItem.innerHTML = `<strong>Date:</strong> ${item.date}<br><strong>Event:</strong> ${item.event}`;
+                listItem.setAttribute('onclick', `openModal(${index})`);
+                historyList.appendChild(listItem);
+            });
+            })
+
+
+
+
+
+        }
+
+        function openModal(index) {
+            var modal = document.getElementById('myModal');
+            var modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = `<strong>Date:</strong> ${myHistory[index].date}<br><strong>Event:</strong> ${myHistory[index].event}<br><strong>Details:</strong> ${myHistory[index].details}`;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'none';
+        }
+
+        function share() {
+            // Add your share functionality here
+            alert('Share functionality to be implemented!');
+              let textToShare = document.getElementById("modalContent").innerText;
+              console.log(textToShare)
+               let shareLink = "whatsapp://send?text=" + encodeURIComponent(textToShare);
+               window.open(shareLink);
+        }
+
+        function copy(){
+            let textToCopy=document.getElementById("modalContent");
+        console.log(textToCopy.textContent)
+        navigator.clipboard.writeText(textToCopy.textContent)?alert("copied"):"";
+        }
+
+        // Close modal if clicked outside the modal content
+        window.onclick = function(event) {
+            var modal = document.getElementById('myModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+        // getData();
+        displayHistory();
+    </script>
+</body>
+</html>

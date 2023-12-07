@@ -1,0 +1,79 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style>
+        body{
+            background-color: white;
+        }
+        .container{
+
+            width: 50%;
+            margin: auto;
+            height: 500px;
+            background-color: white;
+            padding: 20px;
+        }
+        .welcome{
+            color: gray;
+            font-size: 12px;
+
+        }
+        .format{
+
+            margin-bottom: 4px;
+
+        }
+        .email{
+            width: 90%;
+            line-height: 32px;
+            margin-top: 15px;
+            border-radius: 10px;
+            outline: none;
+            background-color: gainsboro;
+            border: 1px none;
+            padding-left:10px;
+        }
+        .label{
+            margin-top: 20px;
+            display:block;
+            font-size: 12px;
+            font-weight:800 ;
+
+        }
+          .submit{
+            margin-top: 15px;
+            font-weight: bold;
+            width: 90%;
+            padding: 10px;
+            background-color: rgba(0,128,0,0.5);
+            border: 1px dotted silver;
+        }
+
+    </style>
+</head>
+<body>
+    <form id="loginForm" class="container">
+    <h2 class="format">Let's sign you in</h2>
+    <span class="welcome">Welcome back. You've been missed</span>
+
+    <label for="email" class="label" >Email</label>
+    <input type="text" class="email" name="email" placeholder="Email" id="email" required>
+
+
+    <label for="password" class="label">Password</label>
+    <input type="password" class="email" placeholder="Password" id="password" name="password" required>
+        <button type="submit" id="submit" class="submit">Log in</button>
+        <br><br>
+   <a style="color:  rgba(0,128,0,0.5)" href="{{url_for('signup')}}">sign up</a>
+</form>
+
+<script src="../static/js/login.js"></script>
+</body>
+
+</html>
+
+

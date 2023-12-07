@@ -4,7 +4,7 @@ let snapShot=document.getElementById("circle");
 let vid=document.getElementById("vid")
 let canvas=document.getElementById("myCanvas");
 let galleryIcon=document.getElementById("gallery-label");
-let CameraReturn=document.getElementById("flipCamera");
+let CameraReturn=document.getElementById("history");
 let image_data_url=''
 let footer=document.getElementById("footer")
 //configuration for the camera.
@@ -74,21 +74,27 @@ function startCam(){
 
 
 
-                fetch("/camera", {method: "POST", body: image_data_url})
+                fetch("/camera", {method: "POST", body: image_data_url,headers:{'access_token':localStorage.getItem('access_token')}})
                     .then( r =>r.json())
                     .then((data)=>{
-                           let arrayResponse=[];
+
+                         if(data.ok){
+                               let arrayResponse=[];
                            let textArea=document.getElementById("intext");
                            let message=document.getElementById("message");
                            let myResponse=data['response'];
                            if(myResponse!=="invalid"){
                             arrayResponse.push(myResponse);
                            // document.getElementById("loader").classList.toggle("show-nothing");
-                           let myLoader1=document.querySelectorAll("#loader");
+
+                               //removing the loaders
+                               let myLoader1=document.querySelectorAll("#loader");
                             for(let i=0;i<myLoader1.length;i++){
                             myLoader1[i].remove();
                             }
+                            //the results being appended
                            message.innerText=arrayResponse[0];
+                            //the modal being manipulated
                             document.getElementById("modal").classList.toggle("show-nothing")
                             document.getElementById("close").classList.toggle("show-nothing")
                            }
@@ -108,6 +114,27 @@ function startCam(){
                             document.getElementById("close").classList.toggle("show-nothing")
                                  message.innerText="Please position your camera properly and take a textual image."
                            }
+
+                         }
+
+                         else {
+                             let loaders=document.querySelectorAll('#loader')
+                             for(let i=0;i<loaders.length;i++){
+                                 loaders[i].remove();
+                             }
+                              canvas.style.display="none";
+                              snapShot.style.display="flex";
+                            // e.target.classList.toggle("show-nothing");
+                            galleryIcon.classList.toggle("show-nothing");
+                             CameraReturn.style.display="flex";
+                             galleryIcon.style.display="inline-block"
+
+                             alert('check your network connectivity')
+                         }
+
+
+
+
 
                     })
 

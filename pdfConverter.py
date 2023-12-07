@@ -28,9 +28,11 @@ class PDF:
         self.c.save()
 
     def read_directly(self, data):
-        with open(f"{self.path}.txt",'w') as f:
+        with open(f"{self.path}.txt", 'w') as f:
             f.write(data)
         self.t.textLine(data)
         self.c.drawText(self.t)
         self.c.save()
+
+
 
