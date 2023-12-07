@@ -75,13 +75,3 @@ def write_query(query: str):
         if connection:
             connection.close()
 
-
-# db_obj = return_query(f"SELECT * from users WHERE email='edeanijerry@gmail.com'")
-# print(db_obj[0])
-# name='jerry'
-# email='dendahd'
-# hash_password='adjfhfha'
-# query="insert into users(name,email,password) values('ultimate','edeaanijerrmy@kgmail.com','bla');"
-# wq=write_query(query)
-# print(wq)
-hasher('ddnf')
